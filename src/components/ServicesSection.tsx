@@ -1,42 +1,42 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Layout, Palette, Code, Share2, Target, Search } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 const services = [
   {
-    icon: Layout,
-    title: "Веб-дизайн",
+    icon: "Globe",
+    title: "Упаковка бизнеса",
     description:
-      "Мы создаем сайты, которые не только визуально привлекательны, но и функциональны, удобны в использовании. В CodeCraft ваш бренд в центре внимания — мы обеспечиваем соответствие онлайн-присутствия целям и ценностям вашего бизнеса.",
+      "Создадим продающий сайт с вашими услугами, оформим профессиональные соцсети, будем вести контент и сделаем привлекательное оформление на Авито — чтобы клиент сразу доверял.",
   },
   {
-    icon: Palette,
-    title: "Графический дизайн",
+    icon: "Star",
+    title: "Управление репутацией",
     description:
-      "От логотипов до постов в соцсетях — мы создаем креативные графические решения, усиливающие ваш бренд. Наши дизайны уникальны и профессиональны, производя нужное впечатление на целевую аудиторию.",
+      "Собираем и публикуем отзывы на Авито, Яндекс Услугах и Профи.ру. Формируем положительный образ вашей бригады, чтобы клиенты выбирали именно вас.",
   },
   {
-    icon: Code,
-    title: "Веб-разработка",
+    icon: "TrendingUp",
+    title: "Профессиональная реклама",
     description:
-      "Мы создаем технически надежные и перспективные сайты. Наша команда обеспечивает надежность, масштабируемость и скорость, помогая вашему бизнесу расти в цифровом пространстве.",
+      "Настраиваем таргетированную и контекстную рекламу с экономией бюджета. Приводим только целевые заявки от людей, которым действительно нужен ремонт.",
   },
   {
-    icon: Share2,
-    title: "Соцсети",
+    icon: "PhoneCall",
+    title: "Ответы на звонки и заявки",
     description:
-      "Сильное присутствие в социальных сетях сегодня решает многое. Мы поможем создать впечатление с помощью привлекательных визуалов и эффективных стратегий, чтобы ваш бренд оставался заметным.",
+      "Берём на себя все входящие звонки и сообщения. Записываем клиентов на замер, отвечаем быстро и профессионально — вы занимаетесь работой, мы занимаемся общением.",
   },
   {
-    icon: Target,
-    title: "Результат",
+    icon: "FileText",
+    title: "Составление сметы",
     description:
-      "В CodeCraft мы нацелены на успех. Наш подход всегда направлен на достижение измеримых результатов, способствующих росту вашего бизнеса. Вместе находим то, что действительно работает.",
+      "Формируем полную детальную смету с перечнем всех работ и материалов. Клиент видит прозрачное ценообразование и принимает решение быстрее.",
   },
   {
-    icon: Search,
-    title: "SEO",
+    icon: "MessageSquare",
+    title: "Дожим после замера",
     description:
-      "Видимость в поиске критически важна. Мы оптимизируем сайт с применением современных SEO-техник, чтобы вы были выше в Google и целевая аудитория легко вас находила.",
+      "Если клиент молчит после замера и получения сметы — мы мягко напоминаем, отвечаем на возражения и доводим до подписания договора. Не теряем ни одну заявку.",
   },
 ]
 
@@ -47,13 +47,13 @@ export function ServicesSection() {
 
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mx-auto block w-fit">
-          Наша экспертиза
+          Наши услуги
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 text-balance">
-          В чем мы <span className="text-primary">сильны</span>
+          Всё для роста вашей <span className="text-primary">бригады</span>
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto text-pretty leading-relaxed text-lg">
-          От концепции до запуска — мы трансформируем ваши цифровые амбиции в мощные онлайн-решения, приносящие результат.
+          Мы берём на себя всё — от создания образа до закрытия сделки. Вы занимаетесь ремонтом, мы приводим клиентов.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
@@ -63,7 +63,7 @@ export function ServicesSection() {
             >
               <CardHeader>
                 <div className="mb-4 inline-flex p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                  <service.icon className="h-6 w-6" />
+                  <Icon name={service.icon} className="h-6 w-6" fallback="Star" />
                 </div>
                 <CardTitle className="text-xl group-hover:text-primary transition-colors">{service.title}</CardTitle>
               </CardHeader>

@@ -4,39 +4,42 @@ import { QuoteFormDialog } from "@/components/QuoteFormDialog"
 
 const pricingTiers = [
   {
-    name: "Базовый",
-    price: "99 900",
+    name: "Старт",
+    price: "15 000",
+    period: "/ мес",
     features: [
-      "До 5 страниц",
-      "Адаптивный дизайн",
-      "Базовая SEO-оптимизация",
-      "Форма обратной связи",
-      "1 месяц поддержки",
+      "Продающий сайт под ключ",
+      "Оформление профиля Авито",
+      "Настройка рекламы на Авито",
+      "Сбор первых отзывов",
+      "Консультация по работе с клиентами",
     ],
     highlighted: false,
   },
   {
-    name: "Про",
-    price: "249 900",
+    name: "Рост",
+    price: "30 000",
+    period: "/ мес",
     features: [
-      "До 15 страниц",
-      "Премиум-дизайн",
-      "Расширенная SEO-оптимизация",
-      "Интеграция CMS",
-      "Функционал e-commerce",
-      "3 месяца поддержки",
+      "Всё из тарифа Старт",
+      "Ведение соцсетей (контент-план)",
+      "Настройка Яндекс / VK рекламы",
+      "Управление репутацией (Профи.ру, Яндекс)",
+      "Ответы на звонки и запись на замер",
+      "Составление смет для клиентов",
     ],
     highlighted: true,
   },
   {
-    name: "Индивидуальный",
+    name: "Максимум",
     price: "По запросу",
+    period: "",
     features: [
-      "Неограниченно страниц",
-      "Кастомный функционал",
-      "API-интеграции",
-      "Персональный менеджер",
-      "6 месяцев поддержки",
+      "Всё из тарифа Рост",
+      "Личный менеджер по продажам",
+      "Дожим клиентов после замера",
+      "Полное ведение CRM",
+      "Еженедельные отчёты и аналитика",
     ],
     highlighted: false,
   },
@@ -60,10 +63,10 @@ export function PricingSection() {
             Прозрачные цены
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance">
-            Выберите <span className="text-primary">идеальный тариф</span> для вашего проекта
+            Выберите <span className="text-primary">подходящий формат</span> сотрудничества
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            От стартапов до крупного бизнеса — у нас есть подходящее решение
+            От базовой упаковки до полного аутсорса продаж — подберём оптимальный вариант для вашей бригады
           </p>
         </div>
 
@@ -92,7 +95,7 @@ export function PricingSection() {
                       <>
                         <span className="text-lg font-normal text-muted-foreground">от </span>
                         {tier.price}
-                        <span className="text-lg font-normal text-muted-foreground"> ₽</span>
+                        <span className="text-lg font-normal text-muted-foreground"> ₽{tier.period}</span>
                       </>
                     )}
                   </span>
@@ -112,7 +115,7 @@ export function PricingSection() {
                   variant={tier.highlighted ? "default" : "outline"}
                   className={`w-full ${tier.highlighted ? "shadow-lg shadow-primary/20" : ""}`}
                 >
-                  {tier.price === "По запросу" ? "Связаться с нами" : "Выбрать тариф"}
+                  {tier.price === "По запросу" ? "Обсудить условия" : "Выбрать тариф"}
                 </QuoteFormDialog>
               </CardContent>
             </Card>
@@ -121,8 +124,8 @@ export function PricingSection() {
 
         <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground">
-            Все тарифы включают <span className="text-primary font-semibold">бесплатную настройку хостинга</span> и{" "}
-            <span className="text-primary font-semibold">SSL-сертификат</span>
+            Все тарифы включают <span className="text-primary font-semibold">бесплатную консультацию</span> и{" "}
+            <span className="text-primary font-semibold">аудит вашего текущего присутствия</span>
           </p>
         </div>
       </div>
